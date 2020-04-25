@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import landingDesign from './assets/landing-design.jpg';
+import mesada from './assets/mesada.jpg';
+import mesada2 from './assets/mesada2.jpg';
+import mesaalgarrobo from './assets/mesaalgarrobo.jpg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -8,7 +11,9 @@ import {
     Button,
     Navbar,
     Nav,
-    NavItem
+    NavItem,
+    Carousel,
+    Jumbotron
 } from 'react-bootstrap';
 
 
@@ -45,7 +50,8 @@ class App extends React.Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                {this.state.page === 'principal' &&
+                
+                {this.state.page === 'principal' &&               
                 <div className="App-header d-flex flex-column flex-lg-row">
                     <div>
                         <p>Bienvenidos a Carpinteria Gonzalez</p>
@@ -65,7 +71,6 @@ class App extends React.Component {
                     <div>
                         <p>Imagen de carpinteria</p>
                         <img src={landingDesign} className="App-logo" alt="logo"/>
-
                     </div>
 
                 </div>
@@ -73,12 +78,55 @@ class App extends React.Component {
                 {this.state.page === 'trabajos' &&
                 <div className="App-header d-flex flex-column flex-lg-row">
                     <div>
+                        <Jumbotron>
+                            <h1>Hello, world!</h1>
+                            <p>
+                                This is a simple hero unit, a simple jumbotron-style component for calling
+                                extra attention to featured content or information.
+                            </p>
+                            <p>
+                                <Button variant="primary">Learn more</Button>
+                            </p>
+                        </Jumbotron>
 
-                        <p>Imagen de trabajos</p>
-                        <img src={landingDesign} className="App-logo" alt="logo"/>
+                        <Carousel>
+                                <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={mesada}
+                                alt="First slide"
+                                />
+                                <Carousel.Caption>
+                                <h3>First slide label</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                className="d-block w-100"
+                                src={mesada2}
+                                alt="Third slide"
+                                />
 
-                    </div>
+                                <Carousel.Caption>
+                                <h3>Second slide label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img 
+                                className="d-block w-100"
+                                src={mesaalgarrobo}
+                                alt="Third slide"
+                                />
+                                <Carousel.Caption>
+                                <h3>Third slide label</h3>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
 
+                    </div>    
                 </div>
                 }
             </div>
