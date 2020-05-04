@@ -4,6 +4,7 @@ import landingDesign from './assets/landing-design.jpg';
 import mesada from './assets/mesada.jpg';
 import mesada2 from './assets/mesada2.jpg';
 import mesaalgarrobo from './assets/mesaalgarrobo.jpg';
+import fondoJumbotron from './assets/fondoJumbotron.jpg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -35,6 +36,11 @@ class App extends React.Component {
         this.setState({page: 'trabajos'})
     }
 
+    mostrarNosotros() {
+        console.log('Mostrar Nosotros')
+        this.setState({page: 'nosotros'})
+    }
+
     render() {
         return (
             <div className="App">
@@ -45,7 +51,7 @@ class App extends React.Component {
                         <Nav className="ml-auto">
                             <Button variant="link" onClick={() => this.mostrarPrincipal()}>Principal</Button>
                             <Button variant="link" onClick={() => this.mostrarTrabajos()}>Trabajos</Button>
-                            <Button variant="link">Nosotros</Button>
+                            <Button variant="link" onClick={() => this.mostrarNosotros()}>Nosotros</Button>
                             <Button variant="link">Contacto</Button>
                         </Nav>
                     </Navbar.Collapse>
@@ -76,19 +82,8 @@ class App extends React.Component {
                 </div>
                 }
                 {this.state.page === 'trabajos' &&
-                <div className="App-header d-flex flex-column flex-lg-row">
-                    <div>
-                        <Jumbotron>
-                            <h1>Hello, world!</h1>
-                            <p>
-                                This is a simple hero unit, a simple jumbotron-style component for calling
-                                extra attention to featured content or information.
-                            </p>
-                            <p>
-                                <Button variant="primary">Learn more</Button>
-                            </p>
-                        </Jumbotron>
-
+                <div className="App-header">
+                    <div style={{width: '60%', margin: 'auto'}}>
                         <Carousel>
                                 <Carousel.Item>
                                 <img
@@ -127,6 +122,23 @@ class App extends React.Component {
                         </Carousel>
 
                     </div>    
+                </div>
+                }
+                
+                {this.state.page === 'nosotros' &&               
+                <div className="App-header d-flex flex-column flex-lg-row">
+                    <div className = "container">
+                            <Jumbotron className="Jumbotron">
+                                <h1>Hello, world!</h1>
+                                <p>
+                                    This is a simple hero unit, a simple jumbotron-style component for calling
+                                    extra attention to featured content or information.
+                                </p>
+                                <p>
+                                    <Button variant="primary">Learn more</Button>
+                                </p>
+                            </Jumbotron>
+                        </div>
                 </div>
                 }
             </div>
